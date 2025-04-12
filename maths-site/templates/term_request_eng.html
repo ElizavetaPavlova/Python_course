@@ -1,0 +1,29 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+{% if success %}
+The term has been added
+{% else %}
+Adding error
+{% endif %}
+{% endblock %}
+
+{% block page-lead %}{% endblock %}
+
+{% block content %}
+<div class="container-sm px-5 py-5" id="term-form-result">
+    <h2 class="pb-2 border-bottom">Request result</h2>
+    <p>Dear User <span class="fst-italic">{{ user }}</span>,<br/>
+        Your request has been completed <span class="fw-bold">{% if success %}successfully{% else %}a mistake{% endif %}</span>.
+    </p>
+
+    <h2 class="pb-2 border-bottom">Comment</h2>
+    <p>{{ comment }}</p>
+
+    <h2 class="pb-2 border-bottom">What can be done?</h2>
+    <ul>
+        <li>Fill <a href="/add-term">a form</a> one more time</li>
+        <li>Go back to <a href="/">main page</a></li>
+    </ul>
+</div>
+{% endblock %}
