@@ -1,0 +1,55 @@
+{% extends "base_page.html" %}
+
+{% block page-title %}
+<div style="text-align: center;">
+    <p style="font-size: 0.7em;">Форма по добавлению нового термина</p>
+</div>
+{% endblock %}
+
+{% block page-lead %}
+<div style="text-align: center;">
+    <p style="font-size: 2em;">Ниже вы можете пополнить нашу библиотеку терминов. </p>
+    <p style="font-size: 1em;">*Обратите внимание, ваши данные не сохраняются и не передаются третим лицам.</p>
+  </div>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container-sm px-5 py-5" id="term-form" style="background: linear-gradient(135deg, #a4d0ff, #68a0cf); border-radius: 8px;">
+    <form method="post">
+        <div class="row px-5 py-2">
+            <h3 style="color: #fff;">Ваши контактные данные</h3>
+        </div>
+        <div class="row px-5 py-2">
+            <div class="col-md-6">
+                <label for="name" style="color: #fff;">Ваше имя:</label>
+                <input type="text" class="form-control input-lg" name="name" id="name" placeholder="Иван" style="background-color: #fff; color: #000;" required>
+            </div>
+            <div class="col-md-6">
+                <label for="email" style="color: #fff;">Ваш контактный email:</label>
+                <input type="text" class="form-control input-lg" name="email" id="email" placeholder="ivan@ivanov.com" style="background-color: #fff; color: #000;" required>
+            </div>
+        </div>
+        <div class="row px-5 py-2">
+            <h3 style="color: #fff;">Ваш термин</h3>
+        </div>
+        <div class="row px-5 py-2">
+            <div class="col-md-4">
+                <label for="new_term" style="color: #fff;">Термин</label>
+                <input type="text" class="form-control input-lg" name="new_term" id="new_term" style="background-color: #fff; color: #000;">
+            </div>
+            <div class="col-md-8">
+                <label for="new_definition" style="color: #fff;">Объяснение термина</label>
+                <textarea class="form-control input-lg" name="new_definition" id="new_definition" aria-describedby="definition_note" rows="3" style="background-color: #fff; color: #000;"></textarea>
+                <div id="definition_note" class="form-text" style="color: #fff;">Постарайтесь уложиться в одно, максимум два предложения</div>
+            </div>
+        </div>
+        <div class="row px-5 py-2">
+            <button type="submit" class="btn" formaction="/send-term" style="background: linear-gradient(135deg, #ff5f6d, #ffc371); border: none; color: #fff; font-weight: bold;">Отправить</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+
