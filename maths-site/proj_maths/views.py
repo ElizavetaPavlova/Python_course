@@ -72,6 +72,6 @@ def send_term_en(request):
             terms_work.write_term(new_term, new_definition)
         if context["success"]:
             context["success-title"] = ""
-        return render(request, "term_request_eng.html", context)
+        return render(request, "term_request_en.html", context)
     else:
         add_term_en(request)
