@@ -29,7 +29,7 @@ def send_term(request):
         elif len(new_term) == 0:
             context["success"] = False
             context["comment"] = "Термин должен быть не пустым"
-        elif bool(re.search(r'[a-zA-Z]', new_term)):
+        elif bool(re.search(r'[a-zA-Z]', new_term)) or (bool(re.search(r'[a-zA-Z]', new_definition))):
             context["success"] = False
             context["comment"] = "Для иностранных терминов используйте другую форму на нашем сайте"
         else:
@@ -63,7 +63,7 @@ def send_term_en(request):
         elif len(new_term) == 0:
             context["success"] = False
             context["comment"] = "The term should not be empty"
-        elif bool(re.search(r'[а-яА-ЯёЁ]', new_term)):
+        elif bool(re.search(r'[а-яА-ЯёЁ]', new_term)) or bool(re.search(r'[а-яА-ЯёЁ]', new_definition)):
             context["success"] = False
             context["comment"] = "For Cyrillic terms, use a different form on our website"
         else:
